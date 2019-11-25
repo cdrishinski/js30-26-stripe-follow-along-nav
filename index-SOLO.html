@@ -234,16 +234,23 @@
     </style>
 
     <script>
-        const navItems = document.querySelectorAll('.cool li');
+        const triggers = document.querySelectorAll('.cool > li');
+        const background = document.querySelectorAll('.dropdownBackground')
+        const nav = document.querySelector('nav');
+
 
         function mouseIn (){
-            console.log("mouseIn Func")
+            const dropdown = document.querySelector('.dropdown')
+            dropdown.classList.add('dropdownBackground','dropdownBackground.open')
         }
+
         function mouseOut (){
-            console.log("mouseOut Func")
+            const dropdown = document.querySelector('.dropdown')
+            dropdown.classList.remove('dropdownBackground','dropdownBackground.open')
         }
-        navItems.forEach(item => item.addEventListener('mouseenter', mouseIn))
-        navItems.forEach(item => item.addEventListener('mouseleave', mouseOut))
+        
+        triggers.forEach(trigger => trigger.addEventListener('mouseenter', mouseIn))
+        triggers.forEach(trigger => trigger.addEventListener('mouseleave', mouseOut))
     </script>
 
 </body>
